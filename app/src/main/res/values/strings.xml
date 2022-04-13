@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Task Manager</string>
+    <string name="email">Email</string>
+    <string name="daftar">Daftar</string>
+    <string name="konfirmasi_sandi">Konfirmasi Sandi</string>
+    <string name="sudah_punya_akun_masuk">Sudah punya akun? Masuk!</string>
+    <string name="masuk">Masuk</string>
+    <string name="kata_sandi">Kata Sandi</string>
+    <string name="tidak_punya_akun_daftar">Tidak punya akun? Daftar!</string>
+    <string name="nama_tugas">Nama tugas</string>
+    <string name="mata_pelajaran">Mata pelajaran</string>
+    <string name="simpan">Simpan</string>
+</resources>

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "977192541453",
+    "project_id": "triple-d-6012d",
+    "storage_bucket": "triple-d-6012d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977192541453:android:fdc55ab24d6ad4334c2444",
+        "android_client_info": {
+          "package_name": "com.example.dikasisabarmazseh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977192541453-qbrgar61g9tkenoavegn1anm7atlcksu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASWjjBdUknPNCWvxH-F5YuXxSi9OC2zV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977192541453-qbrgar61g9tkenoavegn1anm7atlcksu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977192541453:android:673b47d1316e4f534c2444",
+        "android_client_info": {
+          "package_name": "com.example.kontol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977192541453-qbrgar61g9tkenoavegn1anm7atlcksu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASWjjBdUknPNCWvxH-F5YuXxSi9OC2zV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "977192541453-qbrgar61g9tkenoavegn1anm7atlcksu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

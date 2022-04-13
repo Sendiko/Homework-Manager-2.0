@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/teks_tampil_tugas"
+        android:layout_margin="8dp"
+        android:textSize="24sp"
+        android:padding="4dp"
+        style="@style/Widget.Material3.Snackbar.TextView"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nama_tugas"/>
+
+    <TextView
+        android:id="@+id/teks_tampil_mapel"
+        android:layout_margin="8dp"
+        android:textSize="20sp"
+        android:padding="4dp"
+        style="@style/Widget.Material3.Snackbar.TextView"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mata_pelajaran"/>
+
+</LinearLayout>

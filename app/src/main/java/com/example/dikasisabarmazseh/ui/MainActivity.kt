@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setupListener()
 
+        // TODO : LISTVIEW
         ref = FirebaseDatabase.getInstance().getReference("TUGAS")
         list = mutableListOf()
         listVIew = list_tugas

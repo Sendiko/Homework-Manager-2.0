@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // TODO : FINGSI ANIMASI
+    // TODO : FUNGSI ANIMASI
     private fun AnimasiMulai() {
         setAnimasi(pencet)
         setTerlihat(pencet)

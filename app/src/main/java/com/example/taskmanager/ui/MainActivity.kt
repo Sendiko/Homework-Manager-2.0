@@ -1,12 +1,15 @@
 package com.example.taskmanager.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
 import com.example.taskmanager.R
+import com.example.taskmanager.database.InputActivity
 import com.example.taskmanager.database.TaskAdapter
 import com.example.taskmanager.database.Taskk
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         ListView()
+        setupListener()
     }
     private fun ListView(){
         ref = FirebaseDatabase.getInstance().getReference("TASK")
@@ -40,5 +44,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+    private fun setupListener(){
+        button_menu.setOnClickListener {
+            intent = Intent(this, InputActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

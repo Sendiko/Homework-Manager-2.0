@@ -1,9 +1,11 @@
 package com.example.taskmanager.database
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.taskmanager.R
+import com.example.taskmanager.ui.MainActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_input.*
@@ -27,6 +29,8 @@ class InputActivity : AppCompatActivity() {
 
         ref.child(taskID).setValue(tasks).addOnCompleteListener {
             Toast.makeText(this, "Task added", Toast.LENGTH_SHORT).show()
+            intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
             name_task.setText("")
             name_subject.setText("")
         }

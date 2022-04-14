@@ -22,7 +22,7 @@ class InputActivity : AppCompatActivity() {
     private fun saveData() {
         val task = name_task.text.toString()
         val sub = name_subject.text.toString()
-        val tasks = Task(task, sub)
+        val tasks = Taskk(task, sub)
         val taskID = ref.push().key.toString()
 
         ref.child(taskID).setValue(tasks).addOnCompleteListener {

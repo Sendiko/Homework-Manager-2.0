@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_marginBottom="24dp"
         android:src="@drawable/ic_baseline_playlist_add_24"
         app:layout_constraintBottom_toTopOf="@+id/button_menu"

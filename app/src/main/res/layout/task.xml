@@ -41,21 +41,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-        <Button
+        <ImageButton
             android:id="@+id/button_update"
+            android:src="@drawable/ic_baseline_edit_note_24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/update"
             android:layout_marginBottom="8dp"
-            style="@style/Widget.Material3.FloatingActionButton.Primary"
-            android:layout_marginStart="64dp"/>
+            android:backgroundTint="@color/design_default_color_primary_variant"
+            style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
+            android:layout_marginStart="300dp"/>
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
+            android:backgroundTint="@color/design_default_color_primary_variant"
+            android:src="@drawable/ic_baseline_delete_24"
             android:layout_height="wrap_content"
             android:text="@string/delete"
             android:layout_marginBottom="8dp"
-            style="@style/Widget.Material3.FloatingActionButton.Primary"
-            android:layout_marginStart="64dp"/>
+            style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
+            android:layout_marginStart="8dp"/>
     </LinearLayout>
 </LinearLayout>

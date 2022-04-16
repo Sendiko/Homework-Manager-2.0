@@ -21,10 +21,12 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email_login"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="emailAddress"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,11 +44,13 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password_login"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="12dp"
             android:inputType="textPassword"
             android:autofillHints="password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password" />
+            android:hint="@string/password" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -54,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Login"
+        android:text="@string/login"
         style="@style/Widget.Material3.FloatingActionButton.Primary"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
@@ -65,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Don't have account? Register now!"
+        android:text="@string/don_t_have_account_register_now"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@+id/button_login"
         app:layout_constraintStart_toStartOf="@+id/button_login"
@@ -76,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"

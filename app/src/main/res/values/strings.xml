@@ -1,9 +1,17 @@
 <resources>
     <string name="app_name">Task Manager</string>
-    <string name="email" />
     <string name="kata_sandi" />
     <string name="delete">Delete</string>
     <string name="update">Update</string>
     <string name="subject_1">Subject 1</string>
     <string name="task_1">Task 1</string>
+    <string name="add_item">add item</string>
+    <string name="expand_menu">expand menu</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account_login_now">Already have an account? Login now!</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="don_t_have_account_register_now">Don\'t have account? Register now!</string>
+    <string name="login">Login</string>
 </resources>

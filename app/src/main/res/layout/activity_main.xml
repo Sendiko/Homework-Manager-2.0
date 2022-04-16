@@ -17,7 +17,8 @@
         android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:contentDescription="@string/expand_menu" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_add"
@@ -31,7 +32,8 @@
         app:layout_constraintEnd_toEndOf="@+id/button_menu"
         app:layout_constraintStart_toStartOf="@+id/button_menu"
         tools:ignore="SpeakableTextPresentCheck"
-        android:focusable="true" />
+        android:focusable="true"
+        android:contentDescription="@string/add_item" />
 
     <ListView
         android:id="@+id/list_task"

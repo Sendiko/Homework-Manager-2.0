@@ -20,10 +20,12 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email_register"
             android:inputType="textEmailAddress"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="12dp"
             android:autofillHints="emailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email" />
+            android:hint="@string/email" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -43,9 +45,11 @@
             android:layout_width="match_parent"
             android:id="@+id/password_register"
             android:inputType="textPassword"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="12dp"
             android:autofillHints="password"
             android:layout_height="wrap_content"
-            android:hint="Password" />
+            android:hint="@string/password" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -63,10 +67,12 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/confirm_password_register"
             android:inputType="textPassword"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="12dp"
             android:autofillHints="password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirm Password" />
+            android:hint="@string/confirm_password" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -75,7 +81,7 @@
         style="@style/Widget.Material3.FloatingActionButton.Primary"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Daftar"
+        android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
@@ -85,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Already have an account? Login now!"
+        android:text="@string/already_have_an_account_login_now"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@+id/button_register"
         app:layout_constraintStart_toStartOf="@+id/button_register"
@@ -96,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="Register"
+        android:text="@string/register"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout"

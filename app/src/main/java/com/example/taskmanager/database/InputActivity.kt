@@ -24,15 +24,19 @@ class InputActivity : AppCompatActivity() {
     private fun saveData() {
         val task = name_task.text.toString()
         val sub = name_subject.text.toString()
-        val tasks = Taskk(task, sub)
         val taskID = ref.push().key.toString()
+        val tasks = Taskk(taskID, task, sub)
 
-        ref.child(taskID).setValue(tasks).addOnCompleteListener {
-            Toast.makeText(this, "Task added", Toast.LENGTH_SHORT).show()
-            intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            name_task.setText("")
-            name_subject.setText("")
+        if (task.isBlank() || sub.isBlank()) {
+            Toast.makeText(this, "Please fill in the blank", Toast.LENGTH_SHORT).show()
+        } else {
+            ref.child(taskID).setValue(tasks).addOnCompleteListener {
+                Toast.makeText(this, "Task added", Toast.LENGTH_SHORT).show()
+                intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                name_task.setText("")
+                name_subject.setText("")
+            }
         }
     }
 }

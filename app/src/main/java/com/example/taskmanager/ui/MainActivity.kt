@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
+import android.widget.Toast
 import com.example.taskmanager.R
 import com.example.taskmanager.database.InputActivity
 import com.example.taskmanager.database.TaskAdapter
@@ -23,6 +24,11 @@ class MainActivity : AppCompatActivity() {
         ListView()
         setupListener()
     }
+
+    override fun onBackPressed() {
+        Toast.makeText(this, "Use home button to exit", Toast.LENGTH_SHORT).show()
+    }
+
     private fun ListView(){
         ref = FirebaseDatabase.getInstance().getReference("TASK")
         list = mutableListOf()
@@ -30,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         ref.addValueEventListener(object  : ValueEventListener{
             override fun onCancelled(db: DatabaseError) {
-                TODO("Not yet implemented")
+
             }
 
             override fun onDataChange(db: DataSnapshot) {

@@ -2,4 +2,8 @@
     <string name="app_name">Task Manager</string>
     <string name="email" />
     <string name="kata_sandi" />
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="subject_1">Subject 1</string>
+    <string name="task_1">Task 1</string>
 </resources>

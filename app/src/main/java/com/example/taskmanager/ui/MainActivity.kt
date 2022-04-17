@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ListView
 import android.widget.Toast
 import com.example.taskmanager.R
+import com.example.taskmanager.auth.LoginActivity
 import com.example.taskmanager.database.InputActivity
 import com.example.taskmanager.database.TaskAdapter
 import com.example.taskmanager.database.Taskk
@@ -74,7 +75,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Delete all data", Toast.LENGTH_SHORT).show()
         }
         button_logout.setOnClickListener {
-            Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
+            intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 

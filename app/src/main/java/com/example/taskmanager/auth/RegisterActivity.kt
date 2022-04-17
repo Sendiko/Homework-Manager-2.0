@@ -35,21 +35,19 @@ class RegisterActivity : AppCompatActivity() {
         if (emailreg.isBlank() || passreg.isBlank()){
             Toast.makeText(this, "Please insert Email and Password", Toast.LENGTH_SHORT).show()
             return
-        }
-
-        if (passreg != confpass){
+        }else if(passreg != confpass){
             Toast.makeText(this, "Password not matched", Toast.LENGTH_SHORT).show()
             return
-        }
-
-        auth.createUserWithEmailAndPassword(emailreg, passreg).addOnCompleteListener(this) {
-            if (it.isSuccessful){
-                Toast.makeText(this, "Registered!", Toast.LENGTH_SHORT).show()
-                intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
-            }else{
-                Toast.makeText(this, "Failed!", Toast.LENGTH_SHORT).show()
+        }else{
+            auth.createUserWithEmailAndPassword(emailreg, passreg).addOnCompleteListener(this) {
+                if (it.isSuccessful){
+                    Toast.makeText(this, "Registered!", Toast.LENGTH_SHORT).show()
+                    intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    Toast.makeText(this, "Failed!", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

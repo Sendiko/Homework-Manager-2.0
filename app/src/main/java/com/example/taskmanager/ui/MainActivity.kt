@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startAnimation(clicked : Boolean) {
-        if (clicked){
+        if (!clicked){
             button_logout.startAnimation(toBottom)
             button_delete_all.startAnimation(toBottom)
             button_add.startAnimation(toBottom)
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setVisibility(clicked : Boolean) {
-        if (clicked){
+        if (!clicked){
             button_logout.visibility = View.GONE
             button_delete_all.visibility = View.GONE
             button_add.visibility = View.GONE

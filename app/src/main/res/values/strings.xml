@@ -14,4 +14,8 @@
     <string name="email">Email</string>
     <string name="don_t_have_account_register_now">Don\'t have account? Register now!</string>
     <string name="login">Login</string>
+    <string name="task">Task</string>
+    <string name="subject">Subject</string>
+    <string name="save">Save</string>
+    <string name="add_task">Add Task</string>
 </resources>

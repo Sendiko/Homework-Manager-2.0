@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".database.InputActivity">
+    tools:context=".database.InputActivity"
+    android:background="@color/darkblue">
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -14,6 +15,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="196dp"
         android:layout_marginEnd="16dp"
+        app:boxStrokeColor="@color/lightblue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +24,8 @@
             android:id="@+id/name_task"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Task" />
+            android:hint="@string/task"
+            android:textColor="@color/almostwhite" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -32,6 +35,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:boxStrokeColor="@color/lightblue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
@@ -40,7 +44,8 @@
             android:id="@+id/name_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Subject" />
+            android:hint="@string/subject"
+            android:textColor="@color/almostwhite" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -48,7 +53,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Save"
+        android:text="@string/save"
+        android:textColor="@color/almostwhite"
         style="@style/Widget.Material3.FloatingActionButton.Primary"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
@@ -60,7 +66,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="169dp"
         android:layout_marginBottom="24dp"
-        android:text="Add Task"
+        android:text="@string/add_task"
+        android:textColor="@color/almostwhite"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"

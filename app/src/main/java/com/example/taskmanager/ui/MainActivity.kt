@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Use home button to exit", Toast.LENGTH_SHORT).show()
     }
 
-    // TODO : LISTVER SETUP
+    // TODO : LISTVEW SETUP
     private fun ListView(){
         ref = FirebaseDatabase.getInstance().getReference("TASK")
         list = mutableListOf()

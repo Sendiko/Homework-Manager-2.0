@@ -28,7 +28,9 @@
             android:drawablePadding="12dp"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/almostwhite" />
+            android:textColor="@color/almostwhite"
+            android:textColorHint="@color/lightblue"
+            android:textCursorDrawable="@color/lightblue" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -41,6 +43,7 @@
         app:boxStrokeColor="@color/lightblue"
         app:endIconMode="password_toggle"
         app:helperText="6 characters or more*"
+        app:helperTextTextColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
@@ -54,7 +57,9 @@
             android:drawablePadding="12dp"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:textColor="@color/almostwhite" />
+            android:textColor="@color/almostwhite"
+            android:textColorHint="@color/lightblue"
+            android:textCursorDrawable="@color/lightblue" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -79,7 +84,9 @@
             android:drawablePadding="12dp"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"
-            android:textColor="@color/almostwhite" />
+            android:textColor="@color/almostwhite"
+            android:textColorHint="@color/lightblue"
+            android:textCursorDrawable="@color/lightblue" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

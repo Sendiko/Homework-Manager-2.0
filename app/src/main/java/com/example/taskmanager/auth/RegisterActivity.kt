@@ -21,6 +21,10 @@ class RegisterActivity : AppCompatActivity() {
         button_register.setOnClickListener {
             register()
         }
+        text_login.setOnClickListener {
+            intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun register() {

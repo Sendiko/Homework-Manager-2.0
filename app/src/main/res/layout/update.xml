@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".database.InputActivity"
-    android:background="@color/darkblue">
-
+    android:layout_height="wrap_content">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
+        android:id="@+id/textInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:boxStrokeColor="@color/lightblue"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,17 +17,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/name_task"
+            android:id="@+id/update_task"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
+            android:drawableStart="@drawable/ic_baseline_edit_note_24"
+            android:drawablePadding="12dp"
             android:hint="@string/task"
+            android:inputType="textEmailAddress"
             android:textColor="@color/almostwhite"
-            android:textColorHint="@color/lightblue"
             android:textCursorDrawable="@color/lightblue" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout5"
+        android:id="@+id/textInputLayout1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -39,43 +38,35 @@
         android:layout_marginEnd="16dp"
         app:boxStrokeColor="@color/lightblue"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/name_subject"
+            android:id="@+id/update_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
+            android:drawableStart="@drawable/ic_baseline_bookmarks_24"
+            android:drawablePadding="12dp"
             android:hint="@string/subject"
+            android:inputType="textEmailAddress"
             android:textColor="@color/almostwhite"
-            android:textColorHint="@color/lightblue"
             android:textCursorDrawable="@color/lightblue" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button_save"
+        android:id="@+id/button_save_update"
         android:layout_width="wrap_content"
+        style="@style/Widget.Material3.FloatingActionButton.Primary"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/save"
+        android:backgroundTint="@color/lightblue"
         android:textColor="@color/almostwhite"
-        style="@style/Widget.Material3.FloatingActionButton.Primary"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/add_task"
-        android:textColor="@color/almostwhite"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout4" />
-
+        android:text="@string/update"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,9 +10,10 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.286" />
         <entry key="app/src/main/res/layout/activity_input.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4123076923076923" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.4017991004497751" />
         <entry key="app/src/main/res/layout/task.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/update.xml" value="0.7024128686327078" />
       </map>
     </option>
   </component>

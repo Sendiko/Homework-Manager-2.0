@@ -15,6 +15,7 @@ class InputActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input)
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
         ref = FirebaseDatabase.getInstance().getReference("TASK")
         button_save.setOnClickListener {
             saveData()

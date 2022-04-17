@@ -36,7 +36,7 @@ class TaskAdapter(val ctx : Context, val layoutresID : Int, val list : List<Task
         return view
     }
 
-    fun deleteData(taskk: Taskk) {
+    private fun deleteData(taskk: Taskk) {
         val progessDialog = ProgressDialog(context, com.google.android.material.R.style.Theme_Material3_Dark_Dialog_Alert)
         progessDialog.isIndeterminate = true
         progessDialog.setMessage("Deleting...")
@@ -49,7 +49,7 @@ class TaskAdapter(val ctx : Context, val layoutresID : Int, val list : List<Task
         }
     }
 
-    fun showUpdateDialog(taskk: Taskk) {
+    private fun showUpdateDialog(taskk: Taskk) {
         val builder = AlertDialog.Builder(ctx)
         builder.setTitle("Edit")
         val inflater = LayoutInflater.from(ctx)
@@ -62,15 +62,15 @@ class TaskAdapter(val ctx : Context, val layoutresID : Int, val list : List<Task
 
         builder.setView(view)
 
-        builder.setPositiveButton("Update"){ _, _ ->
+        builder.setPositiveButton("Update") { _, _ ->
             val db = FirebaseDatabase.getInstance().getReference("TASK")
             val tasks = textTask.text.toString().trim()
             val subject = textSubject.text.toString().trim()
             val taskk = Taskk(taskk.id, tasks, subject)
-            if (tasks.isEmpty() || subject.isEmpty()){
+            if (tasks.isEmpty() || subject.isEmpty()) {
                 Toast.makeText(ctx, "This can't be empty", Toast.LENGTH_SHORT).show()
                 return@setPositiveButton
-            }else{
+            } else {
                 db.child(taskk.id).setValue(taskk).addOnCompleteListener {
                     Toast.makeText(ctx, "Data updated!", Toast.LENGTH_SHORT).show()
                 }

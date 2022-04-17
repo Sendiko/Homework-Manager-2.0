@@ -11,17 +11,31 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_input.*
 
 class InputActivity : AppCompatActivity() {
+
+    // TODO : DATABASE REFERENCE
     lateinit var ref : DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input)
+
+        // TODO : BACK BUTTON IN ACTION BAR
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
+
+        // TODO : FIREBASE DATABASE
         ref = FirebaseDatabase.getInstance().getReference("TASK")
+
+        setupListener()
+    }
+
+    // TODO : SETUPLISTENER
+    private fun setupListener(){
         button_save.setOnClickListener {
             saveData()
         }
     }
 
+    // TODO : SAVE DATA TO FIREBASE DATABASE
     private fun saveData() {
         val task = name_task.text.toString()
         val sub = name_subject.text.toString()

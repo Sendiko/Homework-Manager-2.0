@@ -15,6 +15,8 @@ import kotlinx.android.synthetic.main.update.view.*
 
 class TaskAdapter(val ctx : Context, val layoutresID : Int, val list : List<Taskk>) : ArrayAdapter<Taskk>(ctx, layoutresID, list) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+
+        // TODO : SELECTOR VAL
         val layoutInflater : LayoutInflater = LayoutInflater.from(ctx)
         val view : View = layoutInflater.inflate(layoutresID, null)
         val TT = view.findViewById<TextView>(R.id.text_task)
@@ -26,6 +28,7 @@ class TaskAdapter(val ctx : Context, val layoutresID : Int, val list : List<Task
         TT.text = task.task
         TS.text = task.subject
 
+        // TODO : LISTENER
         BTU.setOnClickListener{
             showUpdateDialog(task)
         }
@@ -36,6 +39,7 @@ class TaskAdapter(val ctx : Context, val layoutresID : Int, val list : List<Task
         return view
     }
 
+    // TODO : DELETE DATA
     private fun deleteData(taskk: Taskk) {
         val progessDialog = ProgressDialog(context, com.google.android.material.R.style.Theme_Material3_Dark_Dialog_Alert)
         progessDialog.isIndeterminate = true
@@ -49,6 +53,7 @@ class TaskAdapter(val ctx : Context, val layoutresID : Int, val list : List<Task
         }
     }
 
+    // TODO : UPDATE DATA
     private fun showUpdateDialog(taskk: Taskk) {
         val builder = AlertDialog.Builder(ctx)
         builder.setTitle("Edit")

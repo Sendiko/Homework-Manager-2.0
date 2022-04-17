@@ -19,10 +19,12 @@ import kotlinx.android.synthetic.main.task.*
 
 class MainActivity : AppCompatActivity() {
 
+    // TODO : FIREBASE
     lateinit var ref : DatabaseReference
     lateinit var list : MutableList<Taskk>
     lateinit var listview : ListView
 
+    // TODO : FAB ANIMATION
     private val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.rotate_open) }
     private val rotateClose : Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.rotate_close) }
     private val toBottom : Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.to_bottom) }
@@ -36,10 +38,12 @@ class MainActivity : AppCompatActivity() {
         setupListener()
     }
 
+    // TODO : DISABLE BACK BUTTON
     override fun onBackPressed() {
         Toast.makeText(this, "Use home button to exit", Toast.LENGTH_SHORT).show()
     }
 
+    // TODO : LISTVER SETUP
     private fun ListView(){
         ref = FirebaseDatabase.getInstance().getReference("TASK")
         list = mutableListOf()
@@ -63,6 +67,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    // TODO : SETUPLISTENER
     private fun setupListener(){
         button_menu.setOnClickListener{
             floatingActionAnimation()
@@ -80,12 +85,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //TODO : FAB ANIMATION
     private fun floatingActionAnimation() {
         setVisibility(clicked)
         startAnimation(clicked)
         clicked = !clicked
     }
 
+    //TODO : FAB ANIMATION
     private fun startAnimation(clicked : Boolean) {
         if (!clicked){
             button_logout.startAnimation(toBottom)
@@ -100,6 +107,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //TODO : FAB ANIMATION
     private fun setVisibility(clicked : Boolean) {
         if (!clicked){
             button_logout.visibility = View.GONE

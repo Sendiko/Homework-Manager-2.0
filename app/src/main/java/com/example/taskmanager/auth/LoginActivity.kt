@@ -14,13 +14,22 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class LoginActivity : AppCompatActivity() {
+
+    // TODO : FIREBASE AUTHENTICATION
     private lateinit var auth : FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        // TODO : FIREBASE AUTHENTICATION
         auth = Firebase.auth
 
+        setupListener()
+    }
+
+    // TODO : SETUPLISTENER
+    private fun setupListener() {
         button_login.setOnClickListener{
             login()
         }
@@ -30,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    // TODO : LOGIN WITH EXISTING ACCOUNT
     private fun login() {
         val email = email_login.text.toString()
         val pass = password_login.text.toString()

@@ -11,13 +11,22 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
+
+    // TODO : FIREBASE AUTHENTICATION
     private lateinit var auth : FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        // TODO : FIREBASE AUTHENTICATION
         auth = Firebase.auth
 
+        setupListener()
+    }
+
+    // TODO : SETUPLISTENER
+    private fun setupListener(){
         button_register.setOnClickListener {
             register()
         }
@@ -27,6 +36,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    // TODO : REGISTER NEW ACCOUNT
     private fun register() {
         val emailreg = email_register.text.toString()
         val passreg = password_register.text.toString()

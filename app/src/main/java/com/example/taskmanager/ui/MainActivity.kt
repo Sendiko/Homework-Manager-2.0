@@ -14,6 +14,7 @@ import com.example.taskmanager.database.TaskAdapter
 import com.example.taskmanager.database.Taskk
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.task.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onDataChange(db: DataSnapshot) {
                 if (db!!.exists()){
+                    list.clear()
                     for (h in db.children){
                         val task = h.getValue(Taskk::class.java)
                         list.add(task!!)

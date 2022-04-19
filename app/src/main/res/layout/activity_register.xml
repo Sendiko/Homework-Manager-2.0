@@ -41,6 +41,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:boxStrokeColor="@color/lightblue"
+        app:counterEnabled="true"
+        app:counterOverflowTextColor="@color/lightblue"
+        app:counterTextColor="@color/almostwhite"
         app:endIconMode="password_toggle"
         app:helperText="6 characters or more*"
         app:helperTextTextColor="@color/red"
@@ -70,6 +73,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:boxStrokeColor="@color/lightblue"
+        app:counterEnabled="true"
+        app:counterOverflowTextColor="@color/lightblue"
+        app:counterTextColor="@color/almostwhite"
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +108,8 @@
         android:textColor="@color/almostwhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/text_login"

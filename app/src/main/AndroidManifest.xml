@@ -10,10 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3.Dark">
         <activity
+            android:name=".auth.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Dark.NoActionBar"/>
+        <activity
             android:name=".database.InputActivity"
             android:exported="false"
-            android:parentActivityName=".ui.MainActivity"
-            android:label="@string/create_task"/>
+            android:label="@string/create_task"
+            android:parentActivityName=".ui.MainActivity" />
         <activity
             android:name=".auth.RegisterActivity"
             android:exported="false"
@@ -21,9 +25,9 @@
         <activity
             android:name=".ui.MainActivity"
             android:exported="false"
-            android:label="@string/list_task"/>
+            android:label="@string/list_task" />
         <activity
-            android:name=".auth.LoginActivity"
+            android:name=".ui.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.Material3.Dark.NoActionBar">
             <intent-filter>

@@ -21,4 +21,5 @@
     <string name="todo">TODO</string>
     <string name="create_task">Create Task</string>
     <string name="list_task">List Task</string>
+    <string name="task_is_empty">Task is empty</string>
 </resources>

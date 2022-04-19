@@ -34,8 +34,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        ListView()
         setupListener()
+    }
+
+    override fun onStart() {
+        ListView()
+        super.onStart()
     }
 
     // TODO : DISABLE BACK BUTTON
@@ -62,6 +66,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     val adapter = TaskAdapter(this@MainActivity,R.layout.task,list)
                     listview.adapter = adapter
+                    text_empty.visibility = View.GONE
+                }else{
+                    text_empty.visibility = View.VISIBLE
                 }
             }
         })
@@ -81,6 +88,10 @@ class MainActivity : AppCompatActivity() {
         }
         button_logout.setOnClickListener {
             intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+        text_empty.setOnClickListener {
+            intent = Intent(this, InputActivity::class.java)
             startActivity(intent)
         }
     }

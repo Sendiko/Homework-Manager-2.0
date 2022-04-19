@@ -28,6 +28,10 @@ class LoginActivity : AppCompatActivity() {
         setupListener()
     }
 
+    override fun onBackPressed() {
+        Toast.makeText(this, "Use home button to exit the app", Toast.LENGTH_SHORT).show()
+    }
+
     // TODO : SETUPLISTENER
     private fun setupListener() {
         button_login.setOnClickListener{

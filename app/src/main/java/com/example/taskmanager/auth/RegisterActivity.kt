@@ -25,7 +25,7 @@ class RegisterActivity : AppCompatActivity() {
         setupListener()
     }
 
-    // TODO : SETUPLISTENER
+    // TODO : SETUP LISTENER
     private fun setupListener(){
         button_register.setOnClickListener {
             register()

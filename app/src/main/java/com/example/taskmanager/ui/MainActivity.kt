@@ -15,12 +15,11 @@ import com.example.taskmanager.database.TaskAdapter
 import com.example.taskmanager.database.Taskk
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.task.*
 
 class MainActivity : AppCompatActivity() {
 
     // TODO : FIREBASE
-    lateinit var ref : DatabaseReference
+    private lateinit var ref : DatabaseReference
     lateinit var list : MutableList<Taskk>
     lateinit var listview : ListView
 
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onStart() {
-        ListView()
+        listView()
         super.onStart()
     }
 
@@ -47,8 +46,8 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Use home button to exit", Toast.LENGTH_SHORT).show()
     }
 
-    // TODO : LISTVEW SETUP
-    private fun ListView(){
+    // TODO : LISTVIEW SETUP
+    private fun listView(){
         ref = FirebaseDatabase.getInstance().getReference("TASK")
         list = mutableListOf()
         listview = findViewById(R.id.list_task)
@@ -58,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onDataChange(db: DataSnapshot) {
-                if (db!!.exists()){
+                if (db.exists()){
                     list.clear()
                     for (h in db.children){
                         val task = h.getValue(Taskk::class.java)
@@ -74,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    // TODO : SETUPLISTENER
+    // TODO : SETUP LISTENER
     private fun setupListener(){
         button_menu.setOnClickListener{
             floatingActionAnimation()

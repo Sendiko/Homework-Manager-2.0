@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.taskmanager.R
-import com.example.taskmanager.database.InputActivity
 import com.example.taskmanager.ui.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_main.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -32,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
         Toast.makeText(this, "Use home button to exit the app", Toast.LENGTH_SHORT).show()
     }
 
-    // TODO : SETUPLISTENER
+    // TODO : SETUP LISTENER
     private fun setupListener() {
         button_login.setOnClickListener{
             login()

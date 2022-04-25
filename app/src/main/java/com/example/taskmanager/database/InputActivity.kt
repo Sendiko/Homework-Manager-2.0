@@ -13,14 +13,14 @@ import kotlinx.android.synthetic.main.activity_input.*
 class InputActivity : AppCompatActivity() {
 
     // TODO : DATABASE REFERENCE
-    lateinit var ref : DatabaseReference
+    private lateinit var ref : DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input)
 
         // TODO : BACK BUTTON IN ACTION BAR
-        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // TODO : FIREBASE DATABASE
         ref = FirebaseDatabase.getInstance().getReference("TASK")
@@ -28,7 +28,7 @@ class InputActivity : AppCompatActivity() {
         setupListener()
     }
 
-    // TODO : SETUPLISTENER
+    // TODO : SETUP LISTENER
     private fun setupListener(){
         button_save.setOnClickListener {
             saveData()

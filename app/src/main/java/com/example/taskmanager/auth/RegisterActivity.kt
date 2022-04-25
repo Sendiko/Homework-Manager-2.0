@@ -57,6 +57,9 @@ class RegisterActivity : AppCompatActivity() {
                     finish()
                 }else{
                     Toast.makeText(this, "Failed!", Toast.LENGTH_SHORT).show()
+                    email_register.setText("")
+                    password_register.setText("")
+                    confirm_password_register.setText("")
                 }
             }
         }

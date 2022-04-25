@@ -83,9 +83,6 @@ class MainActivity : AppCompatActivity() {
             intent = Intent(this, InputActivity::class.java)
             startActivity(intent)
         }
-        button_delete_all.setOnClickListener{
-            Toast.makeText(this, "Delete all data", Toast.LENGTH_SHORT).show()
-        }
         button_logout.setOnClickListener {
             intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -107,12 +104,10 @@ class MainActivity : AppCompatActivity() {
     private fun startAnimation(clicked : Boolean) {
         if (!clicked){
             button_logout.startAnimation(toBottom)
-            button_delete_all.startAnimation(toBottom)
             button_add.startAnimation(toBottom)
             button_menu.startAnimation(rotateClose)
         }else{
             button_logout.startAnimation(fromBottom)
-            button_delete_all.startAnimation(fromBottom)
             button_add.startAnimation(fromBottom)
             button_menu.startAnimation(rotateOpen)
         }
@@ -122,11 +117,9 @@ class MainActivity : AppCompatActivity() {
     private fun setVisibility(clicked : Boolean) {
         if (!clicked){
             button_logout.visibility = View.GONE
-            button_delete_all.visibility = View.GONE
             button_add.visibility = View.GONE
         }else{
             button_logout.visibility = View.VISIBLE
-            button_delete_all.visibility = View.VISIBLE
             button_add.visibility = View.VISIBLE
         }
     }

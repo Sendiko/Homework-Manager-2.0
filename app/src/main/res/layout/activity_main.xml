@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"></ListView>
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/text_empty"
@@ -45,25 +45,10 @@
         android:clickable="true"
         android:contentDescription="@string/todo"
         android:focusable="true"
-        app:layout_constraintBottom_toTopOf="@+id/button_delete_all"
-        app:layout_constraintEnd_toEndOf="@+id/button_delete_all"
-        app:srcCompat="@drawable/ic_baseline_login_24"
-        tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_delete_all"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/lightblue"
-        android:clickable="true"
-        android:focusable="true"
         app:layout_constraintBottom_toTopOf="@+id/button_add"
         app:layout_constraintEnd_toEndOf="@+id/button_add"
-        app:srcCompat="@drawable/ic_baseline_delete_forever_24"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/ic_baseline_login_24"
+        tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_add"

@@ -7,6 +7,11 @@
         <entry key="app/src/main/res/drawable/border.xml" value="0.309" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.286" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_task_24.xml" value="0.286" />
+        <entry key="app/src/main/res/drawable/ic_baseline_bookmarks_24.xml" value="0.309" />
+        <entry key="app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.309" />
+        <entry key="app/src/main/res/drawable/ic_baseline_edit_note_24.xml" value="0.309" />
+        <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.309" />
+        <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.309" />
         <entry key="app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.286" />
         <entry key="app/src/main/res/drawable/ic_baseline_playlist_add_24.xml" value="0.286" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.286" />

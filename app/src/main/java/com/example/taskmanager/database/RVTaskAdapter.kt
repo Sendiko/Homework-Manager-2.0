@@ -17,7 +17,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.taskrv.*
 import kotlinx.android.synthetic.main.taskrv.view.*
 
 class RVTaskAdapter(private val Rvlist : ArrayList<Taskk>, val ctx : Context) : RecyclerView.Adapter<RVTaskAdapter.RVTaskViewholder>() {
@@ -56,20 +55,20 @@ class RVTaskAdapter(private val Rvlist : ArrayList<Taskk>, val ctx : Context) : 
         builder.setTitle("Edit")
         val inflater = LayoutInflater.from(ctx)
         val view = inflater.inflate(R.layout.update, null)
-        val updatetask = view.findViewById<TextInputEditText>(R.id.update_task)
-        val updatesub = view.findViewById<TextInputEditText>(R.id.update_subject)
+        val updateTask = view.findViewById<TextInputEditText>(R.id.update_task)
+        val updateSub = view.findViewById<TextInputEditText>(R.id.update_subject)
         auth = Firebase.auth
         val user = auth.currentUser
 
-        updatetask.setText(taskk.task)
-        updatesub.setText(taskk.subject)
+        updateTask.setText(taskk.task)
+        updateSub.setText(taskk.subject)
 
         builder.setView(view)
 
         builder.setPositiveButton("Update"){_, _ ->
             val db = FirebaseDatabase.getInstance().getReference(user?.uid.toString())
-            val tasks = updatetask.text.toString().trim()
-            val subject = updatesub.text.toString().trim()
+            val tasks = updateTask.text.toString().trim()
+            val subject = updateSub.text.toString().trim()
             val taskk = Taskk(taskk.id, tasks, subject)
             if (tasks.isEmpty() || subject.isEmpty()) {
                 Toast.makeText(ctx, "This can't be empty", Toast.LENGTH_SHORT).show()

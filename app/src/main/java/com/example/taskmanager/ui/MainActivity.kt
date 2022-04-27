@@ -1,13 +1,12 @@
 package com.example.taskmanager.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.InputDevice
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskmanager.R
@@ -20,7 +19,6 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.taskrv.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         taskRV = rv_task
         taskRV.layoutManager = LinearLayoutManager(this)
         taskRV.setHasFixedSize(true)
-        taskArrayList = arrayListOf<Taskk>()
+        taskArrayList = arrayListOf()
         getTaskData()
     }
 

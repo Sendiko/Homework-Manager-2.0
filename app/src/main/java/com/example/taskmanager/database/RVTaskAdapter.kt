@@ -37,6 +37,13 @@ class RVTaskAdapter(private val Rvlist : ArrayList<Taskk>, val ctx : Context) : 
         holder.itemView.imageButtonDelete.setOnClickListener {
             deleteData(currentItem)
         }
+        holder.tietRvTask.setOnClickListener {
+            Toast.makeText(ctx, "Task : " + currentItem.task, Toast.LENGTH_LONG).show()
+        }
+        holder.tietRvSub.setOnClickListener {
+            Toast.makeText(ctx, "Subject : " + currentItem.subject, Toast.LENGTH_LONG).show()
+
+        }
 
     }
 

@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:visibility="gone"
-        android:backgroundTint="@color/lightblue"
+        android:backgroundTint="@color/red"
         android:clickable="true"
         android:contentDescription="@string/todo"
         android:focusable="true"

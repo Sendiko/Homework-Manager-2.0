@@ -46,7 +46,7 @@
         app:counterTextColor="@color/almostwhite"
         app:endIconMode="password_toggle"
         app:helperText="6 characters or more*"
-        app:helperTextTextColor="@color/red"
+        app:helperTextTextColor="@color/yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">

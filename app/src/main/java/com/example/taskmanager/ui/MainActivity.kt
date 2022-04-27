@@ -15,7 +15,10 @@ import com.example.taskmanager.auth.LoginActivity
 import com.example.taskmanager.database.InputActivity
 import com.example.taskmanager.database.RVTaskAdapter
 import com.example.taskmanager.database.Taskk
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.taskrv.*
 
@@ -23,10 +26,9 @@ class MainActivity : AppCompatActivity() {
 
     // TODO : FIREBASE
     private lateinit var db : DatabaseReference
+    private lateinit var auth : FirebaseAuth
     private lateinit var taskRV : RecyclerView
     private lateinit var taskArrayList : ArrayList<Taskk>
-//    lateinit var list : MutableList<Taskk>
-//    lateinit var listview : ListView
 
     // TODO : FAB ANIMATION
     private val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.rotate_open) }
@@ -57,7 +59,9 @@ class MainActivity : AppCompatActivity() {
 
     // TODO : SETUP RECYCLERVIEW
     private fun getTaskData() {
-        db = FirebaseDatabase.getInstance().getReference("TASK")
+        auth = Firebase.auth
+        val user = auth.currentUser
+        db = FirebaseDatabase.getInstance().getReference(user?.uid.toString())
         db.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){

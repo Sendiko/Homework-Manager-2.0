@@ -13,12 +13,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.taskmanager.R
 import com.example.taskmanager.ui.MainActivity
 import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.taskrv.*
 import kotlinx.android.synthetic.main.taskrv.view.*
 
 class RVTaskAdapter(private val Rvlist : ArrayList<Taskk>, val ctx : Context) : RecyclerView.Adapter<RVTaskAdapter.RVTaskViewholder>() {
+
+    private lateinit var auth : FirebaseAuth
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RVTaskViewholder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.taskrv, parent, false)
         return RVTaskViewholder(view)
@@ -42,9 +47,7 @@ class RVTaskAdapter(private val Rvlist : ArrayList<Taskk>, val ctx : Context) : 
         }
         holder.tietRvSub.setOnClickListener {
             Toast.makeText(ctx, "Subject : " + currentItem.subject, Toast.LENGTH_LONG).show()
-
         }
-
     }
 
     // TODO : UPDATE DATA
@@ -55,6 +58,8 @@ class RVTaskAdapter(private val Rvlist : ArrayList<Taskk>, val ctx : Context) : 
         val view = inflater.inflate(R.layout.update, null)
         val updatetask = view.findViewById<TextInputEditText>(R.id.update_task)
         val updatesub = view.findViewById<TextInputEditText>(R.id.update_subject)
+        auth = Firebase.auth
+        val user = auth.currentUser
 
         updatetask.setText(taskk.task)
         updatesub.setText(taskk.subject)
@@ -62,7 +67,7 @@ class RVTaskAdapter(private val Rvlist : ArrayList<Taskk>, val ctx : Context) : 
         builder.setView(view)
 
         builder.setPositiveButton("Update"){_, _ ->
-            val db = FirebaseDatabase.getInstance().getReference("TASK")
+            val db = FirebaseDatabase.getInstance().getReference(user?.uid.toString())
             val tasks = updatetask.text.toString().trim()
             val subject = updatesub.text.toString().trim()
             val taskk = Taskk(taskk.id, tasks, subject)
@@ -86,8 +91,10 @@ class RVTaskAdapter(private val Rvlist : ArrayList<Taskk>, val ctx : Context) : 
         val progressDialog = ProgressDialog(ctx, com.google.android.material.R.style.Theme_Material3_Dark_Dialog_Alert)
         progressDialog.isIndeterminate = true
         progressDialog.setMessage("Deleting...")
+        auth = Firebase.auth
+        val user = auth.currentUser
         progressDialog.show()
-        val db = FirebaseDatabase.getInstance().getReference("TASK")
+        val db = FirebaseDatabase.getInstance().getReference(user?.uid.toString())
         db.child(taskk.id.toString()).removeValue().addOnCompleteListener {
             Toast.makeText(ctx, "Data deleted!", Toast.LENGTH_SHORT).show()
             val intent = Intent(ctx, MainActivity::class.java)

@@ -26,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
         setupListener()
     }
 
+    // TODO : DISABLE BACK NAVIGATION
     override fun onBackPressed() {
         Toast.makeText(this, "Use home button to exit the app", Toast.LENGTH_SHORT).show()
     }

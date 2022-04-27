@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.taskrv.view.*
 
 class RVTaskAdapter(private val Rvlist : ArrayList<Taskk>, val ctx : Context) : RecyclerView.Adapter<RVTaskAdapter.RVTaskViewholder>() {
 
+    // TODO : AUTHENTICATION
     private lateinit var auth : FirebaseAuth
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RVTaskViewholder {

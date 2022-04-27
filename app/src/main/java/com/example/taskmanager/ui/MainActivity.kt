@@ -3,25 +3,30 @@ package com.example.taskmanager.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.InputDevice
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.ListView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.taskmanager.R
 import com.example.taskmanager.auth.LoginActivity
 import com.example.taskmanager.database.InputActivity
-import com.example.taskmanager.database.TaskAdapter
+import com.example.taskmanager.database.RVTaskAdapter
 import com.example.taskmanager.database.Taskk
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.taskrv.*
 
 class MainActivity : AppCompatActivity() {
 
     // TODO : FIREBASE
-    private lateinit var ref : DatabaseReference
-    lateinit var list : MutableList<Taskk>
-    lateinit var listview : ListView
+    private lateinit var db : DatabaseReference
+    private lateinit var taskRV : RecyclerView
+    private lateinit var taskArrayList : ArrayList<Taskk>
+//    lateinit var list : MutableList<Taskk>
+//    lateinit var listview : ListView
 
     // TODO : FAB ANIMATION
     private val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.rotate_open) }
@@ -37,40 +42,47 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onStart() {
-        listView()
         super.onStart()
+        recyclerView()
     }
 
-    // TODO : DISABLE BACK BUTTON
-    override fun onBackPressed() {
-        Toast.makeText(this, "Use home button to exit", Toast.LENGTH_SHORT).show()
+    // TODO : SETUP RECYCLERVIEW
+    private fun recyclerView() {
+        taskRV = rv_task
+        taskRV.layoutManager = LinearLayoutManager(this)
+        taskRV.setHasFixedSize(true)
+        taskArrayList = arrayListOf<Taskk>()
+        getTaskData()
     }
 
-    // TODO : LISTVIEW SETUP
-    private fun listView(){
-        ref = FirebaseDatabase.getInstance().getReference("TASK")
-        list = mutableListOf()
-        listview = findViewById(R.id.list_task)
-
-        ref.addValueEventListener(object  : ValueEventListener{
-            override fun onCancelled(db: DatabaseError) {
-            }
-
-            override fun onDataChange(db: DataSnapshot) {
-                if (db.exists()){
-                    list.clear()
-                    for (h in db.children){
-                        val task = h.getValue(Taskk::class.java)
-                        list.add(task!!)
+    // TODO : SETUP RECYCLERVIEW
+    private fun getTaskData() {
+        db = FirebaseDatabase.getInstance().getReference("TASK")
+        db.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    taskArrayList.clear()
+                    for(taskSnapshot in snapshot.children){
+                        val task = taskSnapshot.getValue(Taskk::class.java)
+                        taskArrayList.add(task!!)
                     }
-                    val adapter = TaskAdapter(this@MainActivity,R.layout.task,list)
-                    listview.adapter = adapter
+                    taskRV.adapter = RVTaskAdapter(taskArrayList, this@MainActivity)
                     text_empty.visibility = View.GONE
                 }else{
                     text_empty.visibility = View.VISIBLE
                 }
             }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("imma find something to put here")
+            }
+
         })
+    }
+
+    // TODO : DISABLE BACK BUTTON
+    override fun onBackPressed() {
+        Toast.makeText(this, "Use home button to exit", Toast.LENGTH_SHORT).show()
     }
 
     // TODO : SETUP LISTENER
